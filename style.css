@@ -13,14 +13,27 @@ h1 {
     margin: 0;
 }
 
-hr {
-    border: 1px solid #ddd;
+h2, h3 {
+    text-align: center;
+    color: #2c3e50;
 }
 
+p {
+    text-align: center;
+    font-size: 16px;    
+}
+
+hr {
+    border: 1px solid #ddd;
+
+}
+
+/* ---NAVIGASI & LINK ---*/
 table {
     margin: 20px auto;
     border-collapse: collapse;
     background-color: white;
+
 }
 
 td {
@@ -36,24 +49,17 @@ a {
 
 a:hover {
     color: #3498db;
+
 }
 
-h2, h3 {
-    text-align: center;
-    color: #2c3e50;
-}
-
+/* --- ELEMEN MEDIA & LIST --- */
 img {
     display: block;
     margin: 20px auto;
     border-radius: 10px;
     width: 200px;
 }
-
-p {
-    text-align: center;
-    font-size: 16px;
-}
+    
 
 ul {
     width: 300px;
