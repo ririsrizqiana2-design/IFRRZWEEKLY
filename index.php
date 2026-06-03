@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informatika Kelas A</title>
 
-    <!-- HUBUNGKAN CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,12 +12,12 @@
     <h1>WEB INFORMATIKA KELAS A</h1>
     <hr>
 
-    <table border="1">
+    <table border="1" cellspacing="0" cellpadding="10px">
         <tr>
-            <td><a href="index.html">Home</a></td>
-            <td><a href="profile.html">Profile</a></td>
-            <td><a href="contact.html">Contact</a></td>
-            <td><a href="Data Mahasiswa.html">Data Mahasiswa</a></td>
+            <td><a href="index.php">Home</a></td>
+            <td><a href="profile.php">Profile</a></td>
+            <td><a href="contact.php">Contact</a></td>
+            <td><a href="mahasiswa.php">Data Mahasiswa</a></td>
         </tr>
     </table>
 
@@ -35,10 +34,11 @@
     <h3>Daftar Publikasi</h3>
 
     <ul>
-        <li>Scopus</li>
-        <ul>
-            <li>Sentimen Analysis</li>
-        </ul>
+        <li>Scopus
+            <ul>
+                <li>Sentimen Analysis</li>
+            </ul>
+        </li>
         <li>WOS</li>
         <li>Sinta</li>
     </ul>
