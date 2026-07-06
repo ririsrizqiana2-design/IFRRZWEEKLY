@@ -7,48 +7,48 @@
     {
 
     if(tambahdata($_POST) > 0)
-        {
-            echo "<script>
-                    alert('Data Berhasil Ditambahkan!!');
-                    window.location.href='mahasiswa.php';
-                    </script>
-                    ";
-        }
-        else
-        {
-            echo "<script>
-                    alert('Data Berhasil Ditambahkan!!');
-                    window.location.href='mahasiswa.php';
-                    </script>";
-        }
+        // {
+        //     echo "<script>
+        //             alert('Data Berhasil Ditambahkan!!');
+        //             window.location.href='mahasiswa.php';
+        //             </script>
+        //             ";
+        // }
+        // else
+        // {
+        //     echo "<script>
+        //             alert('Data Berhasil Ditambahkan!!');
+        //             window.location.href='mahasiswa.php';
+        //             </script>";
+        // }
 
-            // $nama =  $_POST["nama"];
-            // $nim =  $_POST["nim"];
-            // $prodi =  $_POST["jurusan"];
-            // $email =  $_POST["email"];
-            // $nohp =  $_POST["nohp"];
-            // $foto =  $_POST["foto"];
+            $nama =  $_POST["nama"];
+            $nim =  $_POST["nim"];
+            $prodi =  $_POST["jurusan"];
+            $email =  $_POST["email"];
+            $nohp =  $_POST["nohp"];
+            $foto =  $_POST["foto"];
 
-            // $qeury = "INSERT INTO mahasiswa (nama,nim,jurusan,email,no_hp,foto)
-            // VALUES ('$nama', '$nim', '$prodi', '$email', '$nohp', '$foto' )";
+            $qeury = "INSERT INTO mahasiswa (nama,nim,jurusan,email,no_hp,foto)
+            VALUES ('$nama', '$nim', '$prodi', '$email', '$nohp', '$foto' )";
 
-            // mysqli_query($koneksi, $query);
+            mysqli_query($koneksi, $query);
 
-            // if(mysqli_affected_rows($koneksi) > 0)
-            // {
-            //     echo "<script>
-            //             alert('Data Berhasil Ditambahkan!!');
-            //             window.location.href='mahasiswa.php';
-            //             </script>";
-            // }
-            // else
-            // {
-            //     echo "<script>
-            //            alert('Data Berhasil Ditambahkan!!');
-            //             window.location.href='mahasiswa.php';
-            //             </script>";
+            if(mysqli_affected_rows($koneksi) > 0)
+            {
+                echo "<script>
+                        alert('Data Berhasil Ditambahkan!!');
+                        window.location.href='mahasiswa.php';
+                        </script>";
+            }
+            else
+            {
+                echo "<script>
+                       alert('Data Berhasil Ditambahkan!!');
+                        window.location.href='mahasiswa.php';
+                        </script>";
 
-            // }
+            }
 
     }
 
