@@ -1,0 +1,53 @@
+<?php
+    
+    require 'fungsi.php';
+
+    ///  variable super global
+    if(isset($_POST["kirim"]))
+    {
+
+    if(register($_POST) > 0)
+        echo "<script>
+                        alert('User Berhasil Ditambahkan!!');
+                        window.location.href='mahasiswa.php';
+                        </script>";
+            } else
+            {
+                
+            }
+                echo "<script>"
+                        alert('User gagal disimpan: ". mysqli_error($connection) . "');
+                        window.location.href='inputdata.php';
+                        </script>";
+            }
+            }
+
+
+
+<!DOCTYPE html
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="" method="post">
+    <label for="username">Username:</label> <br />
+    <input type="text" name="username" require id="username"> <br>
+    <label for="password">Password:</label><br>
+    <input type="password" name="password" require id="password"><br>
+    <label for="password2">Konfirmasi Password:</label><br>
+    <input type="submit" name="register">Register</button>
+    <button type="submit" name="register">Register</button>
+</form>
+        
+        
+    
+
+
+
+
+</body>
+</html>
