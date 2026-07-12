@@ -1,30 +1,77 @@
 <?php
+    
     require 'fungsi.php';
 
-    if(isset)
+    ///  variable super global
+    if(isset($_POST["login"])){
+
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username'");
+
+        if(mysqli_num_rows($query) == 1){
+            $user = mysqli_fetch_assoc($query);
+
+            if(password_verify($password, $user['password'])){
+                $_SESSION['login'] = true;
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
+
+                header("Location: index.php");
+                exit;
+
+            
+
+
+            }else{
+                echo "<script>alert('Username tidak ditemukan');</script";
+
+
+
+            }
+
+
+
+        }
+
+    }
+    ?>
 
 
 
 
-
-
-
-<!DOCTYPE html>
-<html lang-"en">
+<!DOCTYPE html
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewpport" content="width=device-width, initial-select=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
 <body>
-    <h1>Login</h1>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Login</title>
+</head>
+<body>
 
-    <form action="" method="post">
-        <label for="username">Username:</label> <br />
-        <input type="text" name="usernamme" require id="username"><br />
-        <label for="password">Password:</label> <br />
-        <input tyype="password" name="password" require id="password"><br />
-        <button type="submit" name="login" >Login</button>
+<h1>LOGIN</h1>
+
+<form method="post">
+    Username <br>
+    <input type="password" name="password" required>
+    <br><br>
+
+    <button type="submit" name="login">Login</button>
 </form>
-<p>Belum punya akuun? <a href="register.php">Register!</a> </p>
+
 </body>
 </html>
+
+
+
+
+
+
+    

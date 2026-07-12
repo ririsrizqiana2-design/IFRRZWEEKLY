@@ -1,50 +1,58 @@
 <?php
-    
+
     require 'fungsi.php';
 
-    ///  variable super global
-    if(isset($_POST["kirim"]))
-    {
-
-    if(register($_POST) > 0)
-        echo "<script>
-                        alert('User Berhasil Ditambahkan!!');
-                        window.location.href='mahasiswa.php';
-                        </script>";
-            } else
+    if(isset($_POST["register"]))
+        if(register($_POST) > 0)
             {
-                
-            }
-                echo "<script>"
-                        alert('User gagal disimpan: ". mysqli_error($connection) . "');
-                        window.location.href='inputdata.php';
-                        </script>";
-            }
-            }
+                echo "<script>
+                alert('user berhasil dibuat');
+                window.location.href='login.php';
+                </script>
+                ";
 
 
+            }
+            else{
+                echo "<script>
+                alert('User Gagal Dibuat');
+                window.location.href='index.php'
+                </script>
+                ";
 
-<!DOCTYPE html
+            }
+
+            
+    
+?>
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>REGISTER</title>
 </head>
 <body>
-    <h1>Register</h1>
+    <H1>Register</h1>
+    <hr>
     <form action="" method="post">
-    <label for="username">Username:</label> <br />
-    <input type="text" name="username" require id="username"> <br>
-    <label for="password">Password:</label><br>
-    <input type="password" name="password" require id="password"><br>
-    <label for="password2">Konfirmasi Password:</label><br>
-    <input type="submit" name="register">Register</button>
-    <button type="submit" name="register">Register</button>
+        <label for="username">username : </label><br>
+        <input type="text" name="username" required>
+        <br>
+        <label for="password">password : </label><br>
+        <input type="password" name="password" required>
+        <br>
+        <label for="konfirmasi">Konfirmasi Password</label><br>
+        <input type="password" name="password2" required>
+        <br>
+        <button type="submit" name="register">Register</button>
 </form>
+</body>
+</html>
         
-        
-    
+
 
 
 

@@ -14,10 +14,11 @@
 
     <table border="1" cellspacing="0" cellpadding="10px">
         <tr>
-            <td><a href="index.php">Home</a></td>
-            <td><a href="profile.php">Profile</a></td>
-            <td><a href="contact.php">Contact</a></td>
-            <td><a href="mahasiswa.php">Data Mahasiswa</a></td>
+            <td><a href="profile.php">Home</a></td>
+            <td><a href="contact.php">Profile</a></td>
+            <td><a href="mahasiswa.php">Contact</a></td>
+            <td><a href="register.php">Data Mahasiswa</a></td>
+            <td><a href="login.php">Login</a></td>
         </tr>
     </table>
 
