@@ -20,28 +20,34 @@
 
                 header("Location: index.php");
                 exit;
-
             
-
+            }
+            else{
+                echo "<script>alert('Password salah');</script>";
+                
+            }
 
             }else{
                 echo "<script>alert('Username tidak ditemukan');</script";
 
-
-
             }
+
+            if(mysqli_num_rows($query) == 1){ // cek password
+            } else {
+             echo "<script>alert('Username tidak ditemukan');</script>";
+}
+
 
 
 
         }
 
-    }
     ?>
 
 
 
 
-<!DOCTYPE html
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,17 +55,15 @@
     <title>Login</title>
 </head>
 <body>
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Login</title>
-</head>
-<body>
 
 <h1>LOGIN</h1>
 
-<form method="post">
+<form method="post" action="login.php">
     Username <br>
+    <input type="text" name="username" required>
+    <br><br>
+
+    Password <br>
     <input type="password" name="password" required>
     <br><br>
 
@@ -68,8 +72,6 @@
 
 </body>
 </html>
-
-
 
 
 
