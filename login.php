@@ -1,48 +1,31 @@
 <?php
-    
-    require 'fungsi.php';
+require 'fungsi.php';
+session_start();
 
-    ///  variable super global
-    if(isset($_POST["login"])){
+if (isset($_POST["login"])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+    $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username'");
 
-        $query = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username'");
+    if (mysqli_num_rows($query) == 1) {
+        $user = mysqli_fetch_assoc($query);
 
-        if(mysqli_num_rows($query) == 1){
-            $user = mysqli_fetch_assoc($query);
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['login'] = true;
+            $_SESSION['id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
 
-            if(password_verify($password, $user['password'])){
-                $_SESSION['login'] = true;
-                $_SESSION['id'] = $user['id'];
-                $_SESSION['username'] = $user['username'];
-
-                header("Location: index.php");
-                exit;
-            
-            }
-            else{
-                echo "<script>alert('Password salah');</script>";
-                
-            }
-
-            }else{
-                echo "<script>alert('Username tidak ditemukan');</script";
-
-            }
-
-            if(mysqli_num_rows($query) == 1){ // cek password
-            } else {
-             echo "<script>alert('Username tidak ditemukan');</script>";
-}
-
-
-
-
+            header("Location: index.php");
+            exit;
+        } else {
+            echo "<script>alert('Password salah');</script>";
         }
-
-    ?>
+    } else {
+        echo "<script>alert('Username tidak ditemukan');</script>";
+    }
+}
+?>
 
 
 

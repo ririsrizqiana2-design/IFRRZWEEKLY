@@ -1,49 +1,34 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+}
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informatika Kelas A</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>Dashboard</title>
 </head>
 <body>
+    <h1>Selamat datang, <?php echo $_SESSION['username']; ?>!</h1>
 
-    <h1>WEB INFORMATIKA KELAS A</h1>
-    <hr>
+    <!-- Form tambahan di dalam session login -->
+    <form method="post" action="proses.php">
+        <label for="data">Masukkan data:</label><br>
+        <input type="text" name="data" id="data" required>
+        <br><br>
+        <button type="submit">Kirim</button>
+    </form>
 
-    <table border="1" cellspacing="0" cellpadding="10px">
-        <tr>
-            <td><a href="index.php">Home</a></td>
-            <td><a href="profile.php">Home</a></td>
-            <td><a href="contact.php">Profile</a></td>
-            <td><a href="mahasiswa.php">Contact</a></td>
-            <td><a href="register.php">Register</a></td>
-            <td><a href="login.php">Login</a></td>
-        </tr>
-    </table>
-
-    <h2>Sambutan Kaprodi</h2>
-
-    <img src="assets/images/kaprodi.jpg" alt="Kaprodi" />
-
-    <p>
-        <b>Nama : Muhammad Songkang, Phd. <br>
-        Jabatan : <i>Professor</i></b><br><br>
-        Sambutan : <br> H<sub>2</sub>O, 2<sup>2</sup> Ma maas maf aku gagal
-    </p>
-
-    <h3>Daftar Publikasi</h3>
-
-    <ul>
-        <li>Scopus
-            <ul>
-                <li>Sentimen Analysis</li>
-            </ul>
-        </li>
-        <li>WOS</li>
-        <li>Sinta</li>
-    </ul>
-
+    <br>
+    <a href="logout.php">Logout</a>
 </body>
 </html>
